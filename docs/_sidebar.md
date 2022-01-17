@@ -13,6 +13,10 @@
   * [HOD](install_guide/alg.md#HOD)
 
 * libflow
-  * [APS](install_guide/aps.md)
-  * [BSD](install_guide/bsd.md)
-  * [HOD](install_guide/hod.md)
+  * [APS](install_guide/libflow.md#APS)
+    * [接受](install_guide/libflow.md#📩APSRecive)
+    * [发送](install_guide/libflow.md#📤APSSend)
+    * [Can](install_guide/libflow.md#📤APSCan)
+  * [BSD](install_guide/libflow.md#BSD)
+    * [发送](install_guide/libflow.md#📤BSDSend)
+  * [HOD](install_guide/libflow.md#HOD)
