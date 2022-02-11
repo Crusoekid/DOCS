@@ -92,13 +92,13 @@
 }
 ```
 
-#### 人脸比对
+#### 人脸操作行为
 - Topic : ```aps.faceid_distinguish_json.v1```
 - 端口 : ```24101```
 - 格式
 ```json
 {  
-    { "action", "distinguish"}
+    { "action", "distinguish/selectall"} # 识别 / 查询数据库所有id
 }
 ```
 
@@ -128,6 +128,16 @@
 {"driver_id", IC_Card_id},
 {"driver_name", 驾驶员名字},
 {"speed", 车速} # double
+```
+
+#### 数据库查询结果
+- Topic : ```aps.select_info_json.v1```
+- 端口 : ```24100```
+- 格式
+```json
+{  
+    {"ids", ids (std::vector<std::string>)},
+}
 ```
 
 #### 天迈真疲劳检测
