@@ -2,7 +2,7 @@
 
 ### 📩APSRecive
 
-#### 本地注册
+#### 本地摄像头注册
 - Topic : ```aps.faceid_register_json.v1```
 - 端口 : ```24101```
 - 格式
@@ -12,6 +12,20 @@
     { "img_id", img_id },
     { "action", "insert"},
     { "mode", "camera"}
+}
+```
+
+#### 本地图片注册
+- Topic : ```aps.faceid_register_json.v1```
+- 端口 : ```24101```
+- 格式
+```json
+{
+    { "msg_id", msg_id },
+    { "img_id", img_id },
+    { "action", "insert"},
+    { "mode", "url"},
+    { "data", url地址}
 }
 ```
 
@@ -34,7 +48,7 @@
 }
 ```
 
-#### 本地更新
+#### 本地摄像头更新
 - Topic : ```aps.faceid_register_json.v1```
 - 端口 : ```24101```
 - 格式
@@ -47,6 +61,20 @@
 }
 ```
 
+#### 本地图片更新
+- Topic : ```aps.faceid_register_json.v1```
+- 端口 : ```24101```
+- 格式
+```json
+{
+    { "msg_id", msg_id },
+    { "img_id", img_id },
+    { "action", "update"},
+    { "mode", "url"},
+    { "data", url地址}
+}
+```
+
 #### 平台下发更新
 - Topic : ```aps.faceid_register_json.v1```
 - 端口 : ```24101```
@@ -55,7 +83,7 @@
 {
     { "msg_id", msg_id },
     { "img_id", img_id },
-    { "action", "insert"},
+    { "action", "update"},
     { "mode", "plantform"},
     { "data", {
         {"img_width", image_width},
@@ -123,11 +151,15 @@
 - 端口 : ```24100```
 - 格式
 ```json
-{"status", "success/fail"},
-{"reason", "id_not_match/id_match/no_face"},
-{"driver_id", IC_Card_id},
-{"driver_name", 驾驶员名字},
-{"speed", 车速} # double
+{
+    {"status", "success/fail"},
+    {"reason", "id_not_match/id_match/no_face"},
+    {"driver_id", IC_Card_id},
+    {"driver_name", 驾驶员名字},
+    {"speed", 车速}, # double
+    {"similarity", 相似度}, # 仅回调状态为success时拥有
+    {"image_id", 当前相似度数据库匹配的image_id(唯一)} # 仅回调状态为success时拥有
+}
 ```
 
 #### 数据库查询结果
@@ -136,7 +168,7 @@
 - 格式
 ```json
 {  
-    {"ids", ids (std::vector<std::string>)},
+    {"ids", 数据库image_id数组 (std::vector<std::string>)},
 }
 ```
 
