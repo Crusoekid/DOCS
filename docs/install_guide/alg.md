@@ -143,4 +143,22 @@ BSD算法目前支持```单路BSD摄像头```，```两路BSD摄像头```
 
 
 # HOD
-未完待续...
+> 摄像头安装位于人头顶正上方
+> HOD配置文件位于```/sdcard/run/hod_setup.flag```   
+
+#### HOD摄像头接口说明
+- HOD
+  - DFH2 ：HOD
+  - M5 ：HOD
+
+#### HOD播报声音及上报平台配置
+跟BSD配置一样。[点击查看BSD](#BSD播报声音及上报平台配置)
+!> ```xxxx```为播报选项，替换相应内容即可，目前可替换的内容有```handsoff```、```singlehandoff```。
+
+
+#### HOD可选配置项 
+| 配置项 | 类型 | 配置项说明 | 单位 | 配置举例 | 默认 |
+| :----: | :----: | :----: | :----: | :----: | :----: |
+| need_driver_check | bool | 是否需要驾驶员检测(需要对应dms程序及dms摄像头) | | --need_driver_check=false | 关闭 |
+| hod_judge_time_interval | int | hod程序检测时间间隔 | 毫秒 | --hod_judge_time_interval=3000 | 0 |
+| hod_process_speed | int | 检测速度要求，即达到某速度才启动程序检测区分于达到某速度告警 | km/h | -- hod_process_speed=10 | 0 |

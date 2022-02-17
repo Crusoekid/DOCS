@@ -11,6 +11,8 @@
     * [安装](install_guide/alg.md#FBSD摄像头接口说明)
     * [声音及上传配置](install_guide/alg.md#FBSD播报声音及上报平台配置)
   * [HOD](install_guide/alg.md#HOD)
+    * [安装](install_guide/alg.md#HOD摄像头接口说明)
+    * [声音及上传配置](install_guide/alg.md#HOD播报声音及上报平台配置)
 
 * libflow
   * [APS](install_guide/libflow.md#APS)
