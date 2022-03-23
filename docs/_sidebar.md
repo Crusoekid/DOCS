@@ -22,3 +22,4 @@
   * [BSD](install_guide/libflow.md#BSD)
     * [发送](install_guide/libflow.md#📤BSDSend)
   * [HOD](install_guide/libflow.md#HOD)
+    * [发送](install_guide/libflow.md#📤HODSend)

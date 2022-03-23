@@ -198,7 +198,7 @@
 
 # BSD
 
-### BSDSend 📤
+### 📤BSDSend 
 - Topic : ```output.adas.warning```
 - 端口 : ```24013```
 - 格式
@@ -210,7 +210,22 @@
     { "time", 时间} # int64_t 微秒
     { "warn_id", 1}
 }
-
+```
 
 # HOD
-未完待续...
+
+### 📤HODSend 
+- Topic : ```hod.alert_info_json.v1```
+- 端口 : ```24024```
+- 格式
+```json
+    {
+        "hod",
+        {
+            {"frame_id", frame_id},
+            {"time_ms", 时间}, # 毫秒
+            {"speed", 车速},
+            {"alerts", 告警事件} # handsoff/singlehandoff
+        }
+    }
+```
