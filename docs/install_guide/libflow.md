@@ -183,6 +183,22 @@
 }
 ```
 
+#### 苏州创程定制化方案
+- Topic: ```dms.core_alert.0x100```
+- 端口:```24100```
+- 格式:
+```json
+    {"aps",
+        {
+            {"frame_id", ctx.frame.count},
+            {"time_ms", ctx.frame.millis},
+            {"speed", ctx.vehicle_info.speed},
+            {"alerts", 告警事件(std::vector<std::string>) }
+        }
+    },
+```
+!> alerts目前有: 起步左顾右盼```startlookaround```，进站左顾右盼```pittedlookaround```，转弯左顾右盼```turninglookaround```， 路口左顾右盼```intersectionlookaround```
+
 ## 📤APSCan
 #### 成都昊岳Can输出
 - topic: ```minieye.can_info_json.v1```
@@ -195,6 +211,20 @@
     "can_data" : "base64_string" # unsigned char[8] base64 encode
 }
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # BSD
 
