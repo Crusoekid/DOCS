@@ -152,6 +152,7 @@
 - 格式
 ```json
 {
+    {"faceid_mode", type}, # 识别类型字段(定速，定距，时间等待)
     {"status", "success/fail"},
     {"reason", "id_not_match/id_match/no_face"},
     {"driver_id", IC_Card_id},
