@@ -27,6 +27,7 @@
 | enable_commond_compare | bool | 是否开启指令检测 |||
 | enable_iccard_compare | bool | 是否开启指令检测 |||
 | enable_absense_compare | bool | 是否开启离岗检测 |||
+| driver_feature_threshold | double | 人脸匹配阈值，默认0.65 |||
 
 #### 最新软件包依赖配置
 - DFH2
@@ -112,14 +113,14 @@ BSD算法目前支持```单路BSD摄像头```，```两路BSD摄像头```
 | alert_item_xxxx_interval | int | 多次或循环播放时间间隔 | 毫秒 | --alert_item_xxxx_interval=4000 |
 | alert_item_xxxx_loop | int | 循环播报次数，若为-1则一直循环播放 | | --alert_item_xxxx_loop=-1 |
 | alert_item_xxxx_upload_interval | int | 此告警上传时间间隔 | 毫秒 | --alert_item_xxxx_upload_interval=120000 |
-| camera_height | int | 安装高度，默认1.7米 | 米 | --camera_height=1.7 |
+
 
 !> ```xxxx```为播报选项，替换相应内容即可，目前可替换的内容有```bsdleftlevel1```、```bsdleftlevel2```、```bsdleftlevel3```、```bsdrightlevel1```、```bsdrightlevel2```、```bsdrightlevel3```、```cameraoccation```、```rollover```、```fbsd```。
 
 > 若单路BSD默认是右BSD，即配置```bsdrightlevel1```、```bsdrightlevel2```、```bsdrightlevel3```。若无分级告警，默认配置```bsdrightlevel1```。
 
 配置文件举例
-```bash 举例
+```bash 左侧bsd等级一举例
 --alert_item_bsdleftlevel1_enable=true
 --alert_item_bsdleftlevel1_speedth=0
 --alert_item_bsdleftlevel1_timeth=1000
@@ -127,6 +128,14 @@ BSD算法目前支持```单路BSD摄像头```，```两路BSD摄像头```
 --alert_item_bsdleftlevel1_loop=-1
 --alert_item_bsdleftlevel1_upload_interval=120000
 ```
+
+#### BSD算法配置
+
+| 配置项 | 类型 | 配置项说明 | 单位 | 配置举例 |
+| :----: | :----: | :----: | :----: | :----: |
+| camera_height | int | 安装高度，默认1.7米 | 米 | --camera_height=1.7 |
+| bsd_process_lower_limit_speed | int | 算法运行速度下限，默认0 | km/h | --bsd_process_lower_limit_speed=0 |
+| bsd_process_upper_limit_speed | int | 算法运行速度上限，默认40 | km/h | --bsd_process_upper_limit_speed=40 |
 
 # FBSD
 > 目前算法功能仅限于行人检测并没有分级告警。
