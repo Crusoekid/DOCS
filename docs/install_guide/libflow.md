@@ -217,17 +217,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 # BSD
 
 ### 📤BSDSend 
@@ -241,6 +230,50 @@
     { "speed", 车速 }, #double
     { "time", 时间} # int64_t 微秒
     { "warn_id", 1}
+}
+```
+
+#### 📤物泊科技
+- Topic : ```bsd.alert_msgpack.v1```
+- 端口 : ```24013```
+- 格式
+```json
+{  
+    { "event", "ped/roll_over/bucket/tarpaulin/occation"},
+    { "speed", 车速 }, #double
+    { "time", 时间} # int64_t 微秒
+}
+```
+
+
+## 📤BSDCan
+- Topic : ```output.adas.algo```
+- 端口 : ```24013```
+- 格式
+```json
+{  
+    { "msg_type", "bsd_warning"},
+    { "frame_id", Frame ID},
+    { "camera_time", time}, # us
+    { "host_speed", speed},
+    { "time", time }, # us
+    { "bsd_warning_l1_on", 0/1},
+    { "bsd_warning_l2_on", 0/1},
+    { "bsd_warning_l3_on", 0/1},
+    { "bsd_warning_chaned", bsd告警状态改变}
+}
+```     
+!> 需要配置/sdcard/run/bsd_setup.flag --enable_bsd_can_info_upload=true
+
+
+# FBSD
+- Topic : ```output.adas.warning```
+- 端口 : ```24013```
+- 格式
+```json
+{  
+    { "event", "FBsdWarning/FBsdWarningNone"},
+    { "transfer", t01/t10 } #开始和结束
 }
 ```
 
