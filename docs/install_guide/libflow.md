@@ -262,8 +262,9 @@
     { "bsd_warning_l3_on", 0/1},
     { "bsd_warning_chaned", bsd告警状态改变}
 }
-```     
-!> 需要配置/sdcard/run/bsd_setup.flag --enable_bsd_can_info_upload=true
+```  
+        
+!>  需要配置/sdcard/run/bsd_setup.flag --enable_bsd_can_info_upload=true
 
 
 # FBSD

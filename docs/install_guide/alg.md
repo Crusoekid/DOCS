@@ -134,6 +134,8 @@ BSD算法目前支持```单路BSD摄像头```，```两路BSD摄像头```
 | 配置项 | 类型 | 配置项说明 | 单位 | 配置举例 |
 | :----: | :----: | :----: | :----: | :----: |
 | camera_height | int | 安装高度，默认1.7米 | 米 | --camera_height=1.7 |
+| bsd_car_bodyx | int | 标定车宽， 默认180像素 | 像素 | --bsd_car_bodyx=180 |
+| bsd_skyline | int | 标定地平线，默认180像素 | 像素 | --bsd_skyline=180 |
 | bsd_process_lower_limit_speed | int | 算法运行速度下限，默认0 | km/h | --bsd_process_lower_limit_speed=0 |
 | bsd_process_upper_limit_speed | int | 算法运行速度上限，默认40 | km/h | --bsd_process_upper_limit_speed=40 |
 
